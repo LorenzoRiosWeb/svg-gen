@@ -1,6 +1,8 @@
 // require shape.js
-const shape = require('shape.js')
-// create a prompt so the user can enter up to 3 characters ofr the logo
+const {Shape,Circle,Square,Triangle} = require('shape');
+const inquirer = require('inquirer');
+const fs = require('fs')
+// create a prompt so the user can enter up to 3 characters for the logo
 
 
 // Create prompt for the text color where you can enter a color or hexadecimal number
