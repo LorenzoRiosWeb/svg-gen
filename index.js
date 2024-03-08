@@ -1,5 +1,5 @@
 // require shape.js
-const {Shape,Circle,Square,Triangle} = require('shape');
+const {Shape,Circle,Square,Triangle} = require('./lib/shape');
 const Inquirer = require('inquirer');
 const fs = require('fs')
 // create a prompt so the user can enter up to 3 characters for the logo
@@ -48,17 +48,32 @@ Inquirer.prompt(Questions).then((answers) => {
             circle.setColor(shapeColor);
             svgElement = circle.render() 
             break;
-    
-        default:
+        case 'Square':
+            const square = new Square();
+            circle.setColor(shapeColor);
+            svgElement = square.render() 
+            break;
+        case 'Triangle':
+            const triangle = new Triangle();
+            triangle.setColor(shapeColor);
+            svgElement = triangle.render() 
             break;
     }
+    let x = 150, y = 120;
+    if(shape === 'Square'){
+        y = 145;
+    } else if (shape === 'triangle'){
+        y = 135;
+    }
+    
+    const finalSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    ${svgElement}
+    <text x="${x}" y="${y}" fill="${textColor}" font-size="50" text-amchor="middle">${text}</text>
+  </svg>`
+    fs.writeFileSync('logo.svg', finalSvg);
+    
+    console.log('Generated logo.svg!!')
 })
 
-
-
-
-
-
-// generate logo.svg
 
 
