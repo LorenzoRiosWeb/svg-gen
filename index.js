@@ -50,7 +50,7 @@ Inquirer.prompt(Questions).then((answers) => {
             break;
         case 'Square':
             const square = new Square();
-            circle.setColor(shapeColor);
+            square.setColor(shapeColor);
             svgElement = square.render() 
             break;
         case 'Triangle':
@@ -59,7 +59,7 @@ Inquirer.prompt(Questions).then((answers) => {
             svgElement = triangle.render() 
             break;
     }
-    let x = 150, y = 120;
+    let x = 100, y = 120;
     if(shape === 'Square'){
         y = 145;
     } else if (shape === 'triangle'){
@@ -68,7 +68,7 @@ Inquirer.prompt(Questions).then((answers) => {
     
     const finalSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
     ${svgElement}
-    <text x="${x}" y="${y}" fill="${textColor}" font-size="50" text-amchor="middle">${text}</text>
+    <text x="${x}" y="${y}" fill="${textColor}" font-size="50" text-anchor="middle">${text}</text>
   </svg>`
     fs.writeFileSync('logo.svg', finalSvg);
     
