@@ -14,6 +14,7 @@
 You will need to instal node to run the code, Jest for testing, inquirer 8.2.4 or higher is also required
 
 ##Recording
+
 [Untitled_ Mar 7, 2024 10_15 PM.webm](https://github.com/LorenzoRiosWeb/svg-gen/assets/100882991/eb57a918-bdab-43d6-a148-d1a4cbb1e284)
 
 
