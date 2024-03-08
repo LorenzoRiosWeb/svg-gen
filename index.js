@@ -59,11 +59,13 @@ Inquirer.prompt(Questions).then((answers) => {
             svgElement = triangle.render() 
             break;
     }
-    let x = 100, y = 120;
+    let x = 150, y = 120;
     if(shape === 'Square'){
         y = 145;
-    } else if (shape === 'triangle'){
+        x = 100;
+    } else if (shape === 'Triangle'){
         y = 135;
+        x = 150
     }
     
     const finalSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
